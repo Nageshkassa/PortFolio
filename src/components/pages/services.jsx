@@ -21,15 +21,14 @@ function Services({activeTab}) {
   <div className="services_box_main">
 
   {data.user.services.map((item, index) => (
-    <div className="service_box  ">
-      <img className="services_icon" src="../assets/images/ux.png" alt="ux" />
-      <h3 className="ui_ux font_w_font_s">{item.name}</h3>
-      <h4 className="ui_sub_text font_w_font_s1">
-{item.desc}
-      </h4>
-    </div>
+  <div key={index} className="service_box">
+    <img className="services_icon" src={item.image.url} alt="ux" />
+    <h3 className="ui_ux font_w_font_s">{item.name}</h3>
+    <h4 className="ui_sub_text font_w_font_s1">{item.desc}</h4>
+  </div>
+))}
 
-    ))}
+    
 {/* 
     <div className="service_box">
       <img
@@ -83,7 +82,7 @@ function Services({activeTab}) {
         </div>
         <button
           className="download_cv buy_now font_w_font_s"
-          onclick="window.open('https://themeforest.net/user/the_krishna');"
+          // onClick="window.open('https://themeforest.net/user/the_krishna');"
         >
           <img
             className="shopping_bag"
@@ -133,7 +132,7 @@ function Services({activeTab}) {
         </div>
         <button
           className="download_cv buy_now font_w_font_s"
-          onclick="window.open('https://themeforest.net/user/the_krishna');"
+          // onClick="window.open('https://themeforest.net/user/the_krishna');"
         >
           <img
             className="shopping_bag"
@@ -179,7 +178,7 @@ function Services({activeTab}) {
         </div>
         <button
           className="download_cv buy_now font_w_font_s"
-          onclick="window.open('https://themeforest.net/user/the_krishna');"
+          // onClick="window.open('https://themeforest.net/user/the_krishna');"
         >
           <img
             className="shopping_bag"

@@ -7,7 +7,7 @@ const Card = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Your interval logic here
+
     }, 600 * 3);
     
     if (data && data.user) {

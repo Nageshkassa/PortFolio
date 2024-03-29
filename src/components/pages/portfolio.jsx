@@ -5,18 +5,21 @@ import TabSection from "../TabSection";
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Pop from "./pop_up/portfolio_pop";
-import Pop2 from "./pop_up/3Dpop";
 
+import { useGlobalContext } from '../context';
 const Portfolio = ({activeTab}) => {
-
+  const { data } =useGlobalContext();
+  
   const [open, setOpen] = useState(false);
+const [projData,setdata]=useState();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [selectedPop, setSelectedPop] = useState(null); 
-  const handlePopSelection = (pop) => {
-    setSelectedPop(pop); // Set the selected pop-up based on the parameter
-    setOpen(true); // Open the modal
+
+  const handlePopSelection = (item) => {
+
+    setOpen(true); 
+    setdata(item);
   };
 
 
@@ -31,20 +34,19 @@ const Portfolio = ({activeTab}) => {
 
     boxShadow: 24,
     p: 4,
-    height: '100vh', // Set a maximum height for the modal
-    overflowY: 'auto', // Allow vertical scrolling if content overflows
+    height: '100vh', 
+    overflowY: 'auto', 
 
     padding: '30px',
-    visibility: 'visible', // Consistent visibility
-    opacity: 1, // Consistent opacity
+    visibility: 'visible', 
+    opacity: 1, 
     transition: 'all 0.3s ease-in-out'
   };
 
 
 
  return (
-    <TabSection id="portfolio" title="portfolio" subTitle="  Elevate your brand to new heights with our expertise" isActive={activeTab === "portfolio"}>
-
+    <TabSection id="portfolio" title="portfolio" subTitle="Elevate your brand to new heights with our expertise" isActive={activeTab === "portfolio"}>
 
   <h3 className="passionate font_w_font_s1">
     Odio pulvinar purus pharetra nunc tellus ultrices in ac enim. Volutpat purus
@@ -53,22 +55,29 @@ const Portfolio = ({activeTab}) => {
 
   <div className="content_main">
     <div className="content_main1">
-      <div className=" ">
-        <div className="content_portfolio pop-up"  onClick={() => handlePopSelection('Pop')}>
+
+    {data.user.projects.map((item, index) => (
+       <div key={index} className=" ">
+        <div className="content_portfolio"  onClick={() => handlePopSelection(item)}>
           <div className="content-overlay" />
           <img
             className="content-image"
-            src="../assets/images/content_img.jpg"
+            src={item.image.url}
             alt="content_img"
           />
           <div className="content-details fadeIn-bottom">
-            <h3 className="content-title">Corporate Branding</h3>
+            <h3 className="content-title">{item.title}</h3>
             <p className="content-text">CONTENT</p>
           </div>
         </div>
-        <h4 className="project_name font_w_font_s">Corporate Branding</h4>
+        <h4 className="project_name font_w_font_s">{item.title}</h4>
         <p className="project_name_sub font_w_font_s1">CONTENT</p>
       </div>
+
+))}
+
+{/* 
+
       <div className="">
         <div className="content_portfolio" id="youtube">
   
@@ -88,6 +97,9 @@ const Portfolio = ({activeTab}) => {
         <h4 className="project_name font_w_font_s">Food App Development</h4>
         <p className="project_name_sub font_w_font_s1">youtube video</p>
       </div>
+
+
+
       <div className="">
         <div className="content_portfolio link">
           <div className="content-overlay" />
@@ -159,7 +171,10 @@ const Portfolio = ({activeTab}) => {
         </div>
         <h4 className="project_name font_w_font_s">Bank App Development</h4>
         <p className="project_name_sub font_w_font_s1">content</p>
-      </div>
+      </div> */}
+
+
+
     </div>
   </div>
   <Modal
@@ -169,8 +184,10 @@ const Portfolio = ({activeTab}) => {
         aria-describedby="modal-description"
       >
         <Box sx={style}>
-        {selectedPop === 'Pop' && <Pop />}
-          {selectedPop === 'Pop2' && <Pop2 />}
+
+        <Pop data={projData}/>
+
+
    
         </Box>
       </Modal>

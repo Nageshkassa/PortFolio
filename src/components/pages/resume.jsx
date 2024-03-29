@@ -1,19 +1,11 @@
 import React from 'react'
 import TabSection from "../TabSection";
-import { useEffect ,useState} from 'react';
+
 import { useGlobalContext } from '../context';
 export default function Resume({activeTab}) {
   const { data } =useGlobalContext();
-  const [user,setuser]=useState();
-  useEffect(() => {
-    if (data) {
 
- 
-      const { about } = data.user;
-      setuser(about); 
-      // console.log("fetched data from contextAPI is ", user,"   ");
-    }
-  }, [data]);
+
 
   function getYear(dateString) {
     const date = new Date(dateString);

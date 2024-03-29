@@ -99,7 +99,7 @@ function Contact({activeTab}) {
     <div className="contact_number_main">
       <img src="../assets/images/map.svg" alt="map" />
       <h4 className="contact_number">
-        <a href="javascript:void;">
+        <a href="">
         {data.user.about.address}
         </a>
       </h4>

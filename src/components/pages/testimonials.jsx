@@ -15,7 +15,7 @@ const Testimonials = ({activeTab}) => {
   return (
   
     <TabSection id="testimonials" title="testimonials" subTitle="Trusted By Hundred Clients" isActive={activeTab === "testimonials"}>
-   <h3 class="passionate font_w_font_s1">Aliquam aenean quis massa sagittis quis. Aliquam metus
+   <h3 className="passionate font_w_font_s1">Aliquam aenean quis massa sagittis quis. Aliquam metus
                         vel curabitur est bibendum scelerisque urna semper.
     </h3>
 
@@ -27,7 +27,7 @@ const Testimonials = ({activeTab}) => {
       <Slider {...settings}>
       {data.user.testimonials.map((item, index) => (
 
-  <div>
+<div key={index} className=" ">
     <div className="">
       <div className="img_text">
         <img

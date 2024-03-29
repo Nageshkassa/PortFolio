@@ -10,7 +10,7 @@ import Testimominals   from "./pages/testimonials";
 import Blogs  from "./pages/blog";
 import Contact  from "./pages/contact";
 
-function all_pages({activeTab}) {
+function All_pages({activeTab}) {
   return (
     <div>
       
@@ -61,4 +61,4 @@ function all_pages({activeTab}) {
   )
 }
 
-export default all_pages
+export default All_pages

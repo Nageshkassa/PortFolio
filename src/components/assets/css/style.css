@@ -725,6 +725,7 @@ canvas {
     position: relative;
     list-style: none;
     transition: all 0.4s ease;
+    text-decoration: none;
 }
 
 .sidebar .nav-links li a:hover {
@@ -795,7 +796,7 @@ canvas {
 }
 
 .nav_menu_icon_line {
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid white;
 }
 
 .current-tab img {
@@ -806,7 +807,7 @@ canvas {
     filter: brightness(0) saturate(100%) invert(84%) sepia(7%) saturate(2912%) hue-rotate(94deg) brightness(94%) contrast(92%) !important;
 }
 
-.current-tab a {
+.current-tab{
     color: #55E6A5;
 }
 
@@ -820,7 +821,7 @@ canvas {
 
 .current-tab .sub-menu li a {
     color: #55E6A5 !important;
-}
+} 
 
 /*-----------------------[ 7.Side Menu CSS ]------------------------*/
 .toggle {
@@ -915,12 +916,13 @@ section#card_main {
     display: flex;
     align-items: center;
     justify-content: center;
- 
+    margin: 0 0 0 150px;
     height: 100vh;
     padding: 60px 0;
 }
 
 .olivia_bio {
+        border: 2px solid black;
     position: relative;
     border-radius: 240px 40px 40px 40px;
     border: 2px solid var(--circle-img-border);
@@ -1055,7 +1057,7 @@ section#card_main {
 
 .down_arrow {
     position: absolute;
-    top: 50%;
+    top: 72%;
     transform: translateY(-50%);
     filter: var(--nav-menu-icon);
 }
@@ -1255,13 +1257,15 @@ button:hover {
 }
 
 .services_icon {
-    filter: var(--nav-menu-icon);
-    transition: all 0.5s;
-}
+ 
+    border-radius: 8px;
+    width: 100%;
+    height: 150px;
+  }
+  
 
 .service_box:hover .services_icon {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(23%) saturate(5408%) hue-rotate(72deg) brightness(95%) contrast(89%);
-    transition: all 0.5s;
+    border: 2px solid #55E6A5;
 }
 
 .ui_ux {
@@ -1274,6 +1278,7 @@ button:hover {
 }
 
 .service_box:hover .ui_ux {
+    
     color: #55E6A5;
     transition: all 0.5s;
 }
@@ -1488,25 +1493,26 @@ button:hover .shopping_bag {
     margin: 0;
 }
 
-.figma {
+/* .figma {
     filter: var(--nav-menu-icon);
-}
+} */
 
-.hard_skill_group:hover .figma {
+/* .hard_skill_group:hover .figma {
     filter: brightness(0) saturate(100%) invert(100%) sepia(26%) saturate(5679%) hue-rotate(66deg) brightness(122%) contrast(79%);
-}
+} */
 
 /*-----------------------[ 14.Portfolio Section CSS ]------------------------*/
 .content_main {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
 }
 
 .content_main1 {
-    display: grid;
-    justify-items: start;
+display: grid;
+    flex-direction: row;
     width: 330px;
     height: 420px;
+    grid-template-columns: repeat(2, 330px);
     gap: 30px;
 }
 
@@ -1518,6 +1524,7 @@ button:hover .shopping_bag {
 }
 
 .content_portfolio {
+    
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -1526,6 +1533,7 @@ button:hover .shopping_bag {
 
 .content_portfolio .content-overlay {
     background: rgba(0, 0, 0, 0.7);
+    display: flex;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -1710,13 +1718,13 @@ button:hover .shopping_bag {
     color: var(--card-sub-text);
 } */
 
-.ri-arrow-left-s-line:hover {
+/* .ri-arrow-left-s-line:hover {
     filter: brightness(0) saturate(100%) invert(100%) sepia(42%) saturate(2462%) hue-rotate(72deg) brightness(97%) contrast(86%);
-}
+} */
 
-.ri-arrow-right-s-line:hover {
+/* .ri-arrow-right-s-line:hover {
     filter: brightness(0) saturate(100%) invert(100%) sepia(42%) saturate(2462%) hue-rotate(72deg) brightness(97%) contrast(86%);
-}
+} */
 
 /* .slick-counter {
     position: absolute;
@@ -1765,17 +1773,20 @@ button:hover .shopping_bag {
 }
 
 .blog_img {
-    background-image: url('../images/blog_img1.png');
+
+    /* background-image: url('../images/blog_img1.png'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 250px;
+   /* border: 2px solid  #55E6A5; */
+    height: 200px;
     padding: 12px;
     display: flex;
     justify-content: flex-end;
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
 }
+/* 
 
 .blog_img2 {
     background-image: url('../images/blog_img2.png');
@@ -1803,7 +1814,7 @@ button:hover .shopping_bag {
 
 .blog_img8 {
     background-image: url('../images/blog_img2.png');
-}
+} */
 
 .blog_img:hover {
     filter: drop-shadow(0px 10px 20px rgba(2, 5, 10, 0.40));
@@ -1827,6 +1838,7 @@ button:hover .shopping_bag {
 }
 
 .view_more_main {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1889,6 +1901,7 @@ button:hover .shopping_bag {
     padding: 1rem 0;
     border: none;
     background: transparent;
+
     border-bottom: 2px solid var(--one-background);
     color: var(--card-text);
     font-size: 16px;
@@ -1994,7 +2007,7 @@ iframe {
 /*-----------------------[ 18.Social Media Icons Right Side CSS ]------------------------*/
 .social_media li::before {
     content: "\2022";
-    color: #55E6A5;
+color: transparent;
     font-weight: bolder;
     font-size: 28px;
     display: inline-block;
@@ -2149,6 +2162,8 @@ ul {
 }
 
 .pop-up-video {
+    border: 2px solid #55E6A5;
+    width: 100%;
     border-radius: 20px;
 }
 
@@ -2166,6 +2181,7 @@ ul {
 }
 
 .project_sub_images {
+    /* border: 2px solid #55E6A5; */
     border-radius: 20px;
     margin: 30px 0;
     max-width: 100%;

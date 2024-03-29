@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../context";
-
+import { HashLink as Link} from 'react-router-hash-link';
 function Home() {
   const { data } = useGlobalContext();
   const [user, setUser] = useState();
@@ -43,8 +43,8 @@ function Home() {
                   Download CV
                 </button>
               </div>
-              <div className="circular_text_main ">
-                <a href="/" className="down_arrow_main position-relative">
+              <div className="circular_text_main " >
+                <Link to="/" className="down_arrow_main position-relative">
                   <img
                     className="circular_text"
                     src="../assets/images/circular_text.png"
@@ -55,7 +55,7 @@ function Home() {
                     src="../assets/images/down_arrow.svg"
                     alt="down_arrow"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </section>

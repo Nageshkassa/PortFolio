@@ -33,7 +33,7 @@ function CircleChart({ percentage, innerText }) {
         r="15.9"
       />
       <g className="circle-chart__info">
-        <text className="circle-chart__percent" x="17.9" y="15.5">
+        <text className="circle-chart__percent" x="12.9" y="15.5">
           {percentageStr}%
         </text>
         {innerText && (

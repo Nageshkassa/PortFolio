@@ -1,40 +1,43 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useGlobalContext } from "./context";
 
-const social_media = () => {
+const Social_media = () => {
+  const { data } = useGlobalContext();
+
+  useEffect(() => {
+    if (data && data.user) {
+      console.log("fetched data from social media");
+    }
+  }, [data]);
+
+  if (!data) {
+    return null;
+  }
+
   return (
     <div>
       <div className="social_media_main" id="social_media_main">
-  <ul className="social_media">
-    <li>
-      <a href="https://www.facebook.com" target="blank">
-        FB
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com" target="blank">
-        TW
-      </a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com" target="blank">
-        IG
-      </a>
-    </li>
-    <li>
-      <a href="https://www.behance.net" target="blank">
-        BE
-      </a>
-    </li>
-    <li>
-      <a href="https://dribbble.com" target="blank">
-        DR
-      </a>
-    </li>
-  </ul>
-</div>
-
+        <ul className="social_media">
+          {data.user.social_handles.map((item, index) => (
+            <li key={index}>
+              <a href={item.url} target="_blank">
+                {/* {item.platform} */}
+                <img
+                  src={item.image.url}
+                  alt={item.platform}
+                  style={{
+                    borderRadius: "50%",
+                    width: "50px",
+                    height: "50px",
+                  }}
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default social_media
+export default Social_media;

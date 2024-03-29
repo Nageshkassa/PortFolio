@@ -1,5 +1,5 @@
 {
-  "name": "multi_page_design",
+  "name": "Single_page_Design",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^5.3.4",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "web-vitals": "^2.1.4"

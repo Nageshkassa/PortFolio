@@ -21,7 +21,7 @@ const Skills = ({activeTab}) => {
       ];
         
   return (
-    <TabSection id="skill" title="my skills" subTitle="Crafting Stories through Design and Imagination" isActive={activeTab === "skills"}>
+    <TabSection id="skills" title="my skills" subTitle="Crafting Stories through Design and Imagination" isActive={activeTab === "skills"}>
 <h3 className="passionate font_w_font_s1 ">
     Nec ligula facilisis congue sed montes odio arcu. Sed
     suspendisse lectus pulvinar tempor ultrices quis tellus diam sollicitudin.
@@ -64,20 +64,29 @@ const Skills = ({activeTab}) => {
     <h3 className="lan_skill hard_skill font_w_font_s  ">Hard Skills</h3>
 
 <div className="skill_circle_main">
+
 {data.user.skills.map((skill, index) => (
-  <div className="skill_circle  ">
+  <div key={index} className="skill_circle">
     <div className="hard_skill_group">
-      <img className="figma" src={skill.image.url} alt="figma"  style={{
-    borderRadius: '50%',
-    width: '50px', // Adjust the width as needed
-    height: '50px', // Adjust the height as needed
-  }}/>
+      <img
+        className="figma"
+        src={skill.image.url}
+        alt={skill.name}
+        style={{
+          borderRadius: '50%',
+          width: '80px',
+          height: '80px',
+        }}
+      />
       <h4 className="hard_skill_counter font_w_font_s1">{skill.percentage}%</h4>
     </div>
-    <h4 className="subject font_w_font_s1">{skill.name}</h4>
-
+    <h4 key={`skill-${index}`} className="subject font_w_font_s1">{skill.name}</h4>
   </div>
-    ))}
+))}
+
+
+
+
   </div>
 
 
